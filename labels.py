@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+# Test implementation of library functions
+
 from resistors import resistance_string
 from resistor_colors import resistor_color_bands
 import sys
@@ -38,7 +40,8 @@ for v in real_values:
     rv = resistance_string(v, label='')
     bands = resistor_color_bands(v, 5)
     bands = [b.name for b in bands]
-    print(f"{rv} bands={bands}")
+    bands_str = ', '.join(bands)
+    print(f"{rv},\"{bands_str}\"")
 
 
 sys.exit(0)
