@@ -10,9 +10,9 @@ values = [10, 12, 15, 18, 20, 22, 24, 27, 30, 33, 36, 39, 43, 47, 51, 56, 62, 68
 m_values = [1, 1.2, 1.5, 1.8, 2, 2.2, 4.7]
 real_values = []
 
-print("value")
+print("value,bands")
 
-real_values.append(0)
+#real_values.append(0)
 
 for value in values:
     v = value / 10
@@ -38,7 +38,7 @@ for value in m_values:
 
 for v in real_values:
     rv = resistance_string(v, label='')
-    bands = resistor_color_bands(v, 5)
+    bands = resistor_color_bands(v, num_bands=5, tolerance=1)
     bands = [b.name for b in bands]
     bands_str = ', '.join(bands)
     print(f"{rv},\"{bands_str}\"")
